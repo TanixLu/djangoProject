@@ -4,6 +4,7 @@
     <data-source source="LOCAL" name="db" uuid="169e7bec-6e1f-4e91-96d8-1dd8a0d4dcf3">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
+      <remarks>网站数据库</remarks>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\86188\Desktop\djangoProject\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
