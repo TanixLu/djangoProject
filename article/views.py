@@ -38,6 +38,7 @@ def article_detail(request, id):
     # 载入模板，并返回context对象
     return render(request, 'article/detail.html', context)
 
+
 def article_create(request):
     if request.method == "POST":
         article_post_form = ArticlePostForm(data=request.POST)
@@ -52,6 +53,7 @@ def article_create(request):
         article_post_form = ArticlePostForm()
         context = {'article_post_form': article_post_form}
         return render(request, 'article/create.html', context)
+
 
 def article_safe_delete(request, id):
     if request.method == 'POST':
