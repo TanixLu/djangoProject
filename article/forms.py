@@ -1,8 +1,7 @@
 # coding=utf-8
 # @Time : 2021/7/25 23:54
-# @Author : Tanix Lu
 # @File : forms.py
-# @Software : PyCharm
+
 # 引入表单类
 from django import forms
 # 引入文章模型
