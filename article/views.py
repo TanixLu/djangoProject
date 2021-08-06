@@ -68,17 +68,13 @@ def article_update(request, id):
     article = ArticlePost.objects.get(id=id)
     if request.method == 'POST':
         article_post_form = ArticlePostForm(data=request.POST)
-        print("******************")
-        print(request.POST)
-        print("******************")
         if article_post_form.is_valid():
             article.title = request.POST['title']
             article.body = request.POST['body']
             article.save()
-            return redirect("article:article_detail", id=id)
+            return redirect("article:article_detail", id)
         else:
             return HttpResponse("表单有误，请重新填写。")
     else:
-        article_post_form = ArticlePostForm()
-        context = {'article': article, 'article_post_form': article_post_form}
+        context = {'article': article}
         return render(request, 'article/update.html', context)

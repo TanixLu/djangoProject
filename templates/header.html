@@ -12,11 +12,23 @@
                     <a class="nav-link" href="{% url 'article:article_create' %}">写文章</a>
                 </li>
                 <li class="nav-item">
-
-                    <!-- 改写了这里的 href -->
                     <a class="nav-link" href="{% url 'article:article_list' %}">文章</a>
-
                 </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url "userprofile:logout" %}">退出登录</a>
+                        </div>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "userprofile:login" %}">登录</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
 
